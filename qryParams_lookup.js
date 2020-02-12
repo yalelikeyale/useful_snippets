@@ -2,7 +2,7 @@
 	var qryParams = {};
 	window.document.location.search.substr(1).split('&').forEach(function(kv){
 	  [key, value] = kv.split('=');
-	  qryParams[key] = value;
+	  qryParams[key] = decodeURIComponent(value);
 	});
-	return qryParams."{replace_me}";
+	return qryParams.category;
 })()

@@ -1,11 +1,11 @@
 (function() {
   function findAncestor(el, cls) {
-    if (!el.classList.contains(cls)) {
-      while ((el = el.parentElement) && !el.classList.contains(cls));
+    if (!el.matches(cls)) {
+      while ((el = el.parentElement) && !el.matches(cls));
     }
     return el;
   }
-  var ancestor = findAncestor(event.target, '{INSERT_PARENT_CSS_SELECTOR}');
-  var title = ancestor.querySelector('{INSERT_DESIRED_DATA_CSS_SELECTOR}').textContent;
-  return title;
+  var parent = findAncestor(event.target, '{INSERT PARENT ELEMENT CSS SELECTOR}');
+  var dataPoint = parent.querySelector('{INSERT CSS SELECTOR OF DATA POINT}').textContent;
+  if(!(dataPoint == null)){return dataPoint}
 })();
